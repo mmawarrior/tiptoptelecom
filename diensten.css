@@ -1,0 +1,101 @@
+/* Algemeen styling voor de diensten sectie */
+#diensten {
+  background-color: #e0f7fa; /* Zachte, frisse blauwe achtergrondkleur */
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Schaduw voor diepte */
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+/* Titel styling */
+#diensten h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #008080; /* Frisse groene kleur voor de titel */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Algemene tekst styling in de diensten sectie */
+#diensten p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Styling voor individuele dienstblokken */
+.dienst {
+  background-color: white;
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Schaduw voor diepte */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dienst h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #008080; /* Groene kleur voor kopjes */
+  margin-bottom: 15px;
+}
+
+.dienst p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Hover-effect voor diensten sectie */
+.dienst:hover {
+  transform: translateY(-5px); /* Lichte opwaartse beweging bij hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Zwaardere schaduw bij hover */
+}
+
+/* Toevoegen van knoppen of call-to-action */
+.dienst button {
+  background-color: #008080;
+  color: white;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dienst button:hover {
+  background-color: #004c4c; /* Donkerder groen bij hover */
+  transform: scale(1.05); /* Vergroten bij hover */
+}
+
+/* Responsieve ontwerp voor mobiele apparaten */
+@media (max-width: 768px) {
+  #diensten {
+    padding: 30px 10px;
+  }
+
+  #diensten h2 {
+    font-size: 2rem;
+  }
+
+  .dienst {
+    padding: 20px;
+  }
+
+  .dienst h3 {
+    font-size: 1.6rem;
+  }
+
+  .dienst p {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,202 @@
+/* Algemene styling voor de navbar */
+header {
+  background-color: #0e263d; /* Donkerblauwe achtergrondkleur */
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schaduw voor diepte */
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Flexbox voor de navigatie */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* Logo styling */
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(1.2rem, 2.5vw, 2rem); /* Dynamisch schalen van de tekst */
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Arial', sans-serif;
+  transition: color 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+}
+
+nav .logo img {
+  height: 50px; /* Standaard logo hoogte */
+  width: auto;
+  display: inline-block;
+}
+
+nav .logo span {
+  font-size: inherit; /* Gebruik de dynamische grootte van de ouder */
+  display: inline-block;
+}
+
+/* Styling voor de navigatielinks */
+ul {
+  list-style-type: none;
+  display: flex;
+  gap: 30px;
+  padding: 0;
+  align-items: center;
+  margin-left: auto;
+}
+
+ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+ul li a:hover {
+  color: #0082b9; /* Frisse accentkleur bij hover */
+  background-color: #ffffff; /* Witte achtergrondkleur bij hover */
+  transform: scale(1.05); /* Lichte vergroting bij hover */
+}
+
+/* Hamburger menu styling */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1100; /* Zorgt ervoor dat het boven de content blijft */
+}
+
+.navbar-toggle span {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Responsieve ontwerp voor mobiel */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 20px; /* Zorgt voor meer ademruimte */
+  }
+
+  nav .logo img {
+    display: none; /* Verberg het logo op mobiel */
+  }
+
+  nav .logo {
+    font-size: clamp(1.2rem, 3vw, 1.6rem); /* Tekst dynamisch schalen */
+  }
+
+  ul {
+    display: none; /* Verberg de navigatielinks standaard op mobiel */
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 0;
+    width: 100%;
+    align-items: center;
+    background-color: #0e263d; /* Zelfde kleur als header */
+    position: absolute;
+    top: 100%; /* Zorg dat het menu onder de navbar verschijnt */
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 8px 8px;
+  }
+
+  ul.show {
+    display: flex; /* Toon de navigatie als het hamburger-menu is geklikt */
+    animation: slideDown 0.3s ease;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  ul li a {
+    font-size: 1.3rem;
+    padding: 10px 15px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar-toggle {
+    display: flex;
+    position: absolute;
+    top: 15px; /* Blijft bovenaan */
+    right: 15px; /* Uitgelijnd aan de rechterkant */
+  }
+
+  /* Hamburger menu animatie */
+  .navbar-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    background-color: #ffffff; /* Witte kleur voor consistentie */
+  }
+
+  .navbar-toggle.open span:nth-child(2) {
+    opacity: 0; /* Verwijder de middelste lijn */
+    transform: scale(0); /* Zorgt ervoor dat deze niet zichtbaar is */
+  }
+
+  .navbar-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    background-color: #ffffff; /* Witte kleur voor consistentie */
+  }
+}
+
+/* Optioneel: Hover-effect op hamburger menu */
+.navbar-toggle:hover span {
+  background-color: #0082b9; /* Accentkleur bij hover */
+}
+ 
+@media (max-width: 400px) {
+  nav .logo {
+    font-size: clamp(1rem, 3vw, 1.4rem); /* Dynamisch schalen van de tekst op kleine schermen */
+    white-space: nowrap; /* Voorkomt dat de tekst op meerdere regels komt */
+  }
+
+  nav .logo span {
+    font-size: inherit; /* Erft de dynamische grootte van de ouder */
+  }
+
+  nav .navbar-toggle {
+    top: 10px; /* Zorgt dat het hamburgermenu goed uitgelijnd blijft */
+    right: 10px;
+  }
+
+  nav .logo img {
+    display: none; /* Verberg het logo volledig op zeer kleine schermen */
+  }
+
+  ul li a {
+    font-size: 1.1rem; /* Maak navigatielinks iets kleiner */
+  }
+}

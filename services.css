@@ -1,0 +1,79 @@
+/* Algemene styling voor de Diensten-sectie */
+.services-container {
+  background-color: #ffffff;
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.services-container h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #0082b9;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.services-container .intro-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+/* Diensten-items grid */
+.services-items {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.service-item {
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 30%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.service-content {
+  padding: 20px;
+  text-align: left;
+}
+
+.service-content h3 {
+  font-size: 1.5rem;
+  color: #0082b9;
+  margin-bottom: 10px;
+}
+
+.service-content p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Responsieve aanpassingen */
+@media (max-width: 768px) {
+  .services-items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-item {
+    width: 90%;
+  }
+}
